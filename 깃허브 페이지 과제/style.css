@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Roboto:wght@400;500;700&display=swap");
+
+/* COMMON */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 1250px;
+  margin: 0 auto;
+  z-index: 0;
+  position: relative;
+}
+
+/* header */
+header {
+  background: #2b3137;
+  padding: 15px 0 5px 0;
+  height: auto;
+}
+
+header .container {
+  height: 50px;
+  margin: auto;
+}
+
+header .sub-menu {
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+
+header .sub-menu ul {
+  display: flex;
+  list-style: none;
+}
+
+header .sub-menu ul li {
+  margin: auto 10px;
+}
+
+header .sub-menu ul li .logo {
+  font-size: 35px;
+  opacity: 1;
+}
+
+header .sub-menu ul li i {
+  font-size: 14px;
+  margin-left: 3px;
+  opacity: 0.7;
+}
+
+header .search {
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+
+header .search input {
+  background-color: #464b50;
+  font-size: 14px;
+  height: 35px;
+  width: 235px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+header .search input::placeholder {
+  color: lightgray;
+}
+
+header .search button {
+  background-color: transparent;
+  border: none;
+  padding: 7px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+header .search #sign-up {
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+/* section */
+section {
+  background: #2b3137;
+}
+
+section .main {
+  display: flex;
+}
+
+section .title {
+  width: 50%;
+  margin: auto 5px auto 80px;
+  padding: 10px 60px 60px;
+}
+
+section .title .one-title {
+  text-align: left;
+  font-size: 65px;
+  font-weight: 400;
+  line-height: 1em;
+  margin: 0 0 15px;
+}
+
+section .title .two-title {
+  color: #9e9d9d;
+  font-size: 21px;
+  line-height: 1.3em;
+}
+
+section .title .two-title span {
+  color: white;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: #747373;
+}
+
+section .info {
+  width: 50%;
+}
+
+section .info form {
+  color: black;
+  background: white;
+  margin: 0 80px 60px 35px;
+  padding: 25px 20px;
+  width: 410px;
+  border-radius: 7px;
+  font-size: 14px;
+}
+
+section .info form input {
+  color: black;
+  width: 100%;
+  height: 40px;
+  padding: 10px 7px;
+  margin: 5px auto 15px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+section .info form .name:valid {
+  background-color: #e8f0fe;
+  outline: none;
+}
+
+section .info form .name1:invalid {
+  background-color: #e8f0fe;
+  outline: none;
+}
+
+section .info form p {
+  color: #868484;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4em;
+}
+
+section .info form p span {
+  color: #4294f1;
+}
+
+section .info form .signup-btn {
+  width: 100%;
+  height: 60px;
+  background-color: #2ebc4f;
+  border: none;
+  border-radius: 7px;
+  margin: 14px auto 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* footer */
+
+footer .git {
+  width: 400px;
+  height: 173px;
+  margin: 0 170px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
