@@ -12,9 +12,19 @@
   width: 1080px;
 }
 
-#header-search > h1 {
-  width: 280px;
+#header-search a {
+  text-decoration: none;
+}
+
+#header-search h1 {
+  width: 198px;
+  height: 48px;
   display: inline-block;
+  background: url(./sp_search.png) -4px -4px no-repeat;
+}
+
+#header-search h1 span {
+  display: none;
 }
 
 #header-search h2 {
@@ -22,6 +32,10 @@
 }
 
 #header-search fieldset {
-  width: 520px;
+  margin-left: 20px;
+  padding: 12px 0 12px 10px;
+  width: 521px;
+  height: 49px;
   display: inline-block;
+  border: 2px solid #03cf5d;
 }
