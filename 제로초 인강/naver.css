@@ -102,6 +102,28 @@ header {
   top: -2px;
 }
 
+#search-keyboard {
+  background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_search.svg);
+  background-repeat: no-repeat;
+  background-position: -33px -60px;
+  width: 19px;
+  height: 11px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 3px;
+}
+
+#search-history {
+  background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_search.svg);
+  background-repeat: no-repeat;
+  background-position: -87px -60px;
+  width: 9px;
+  height: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 6px;
+}
+
 #search-image {
   background-image: url(./sp_search.png);
   background-position: -3px -60px;
@@ -175,6 +197,56 @@ nav li:nth-child(6) span:first-child {
   background-position: -70px -285px;
 }
 
+nav li:nth-child(7) span:first-child {
+  width: 35px;
+  background-position: -125px -130px;
+}
+
+nav li:nth-child(8) span:first-child {
+  width: 26px;
+  background-position: -279px -208px;
+}
+
+nav li:nth-child(9) span:first-child {
+  width: 26px;
+  background-position: -128px -104px;
+}
+
+nav li:nth-child(10) span:first-child {
+  width: 26px;
+  background-position: -36px -259px;
+}
+
+nav li:nth-child(11) span:first-child {
+  width: 39px;
+  background-position: -151px -156px;
+}
+
+nav li:nth-child(12) span:first-child {
+  width: 26px;
+  background-position: -279px -130px;
+}
+
+nav li:nth-child(13) span:first-child {
+  width: 26px;
+  background-position: -234px -233px;
+}
+
+nav li:nth-child(14) span:first-child {
+  width: 26px;
+  background-position: -72px -259px;
+}
+
+nav li:nth-child(15) span:first-child {
+  width: 13px;
+  background-position: -140px -78px;
+}
+
+nav li:nth-child(16) span:first-child {
+  width: 26px;
+  background-position: -279px 0;
+}
+
 #search-ranking {
   position: absolute;
   top: 16px;
@@ -190,4 +262,13 @@ nav li:nth-child(6) span:first-child {
 #rank-title {
   letter-spacing: -1px;
   font-size: 14px;
+}
+
+main {
+  background-color: #f2f4f7;
+  overflow: auto;
+}
+
+main h3:nth-of-type(2) {
+  background: red;
 }
