@@ -105,16 +105,18 @@ nav li {
   display: inline-block;
 }
 
+nav li:first-child span.nav-item-mail {
+  width: 25px;
+  background-position: 0 -285px;
+  margin-left: 0;
+}
+
 nav span:first-child {
   height: 16px;
   display: inline-block;
   background-repeat: no-repeat;
   background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
-}
-
-nav li:first-child span:first-child {
-  width: 25px;
-  background-position: 0 -285px;
+  margin-left: 14px;
 }
 
 nav li:nth-child(2) span:first-child {
