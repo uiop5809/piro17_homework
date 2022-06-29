@@ -16,7 +16,7 @@
   position: relative;
 }
 
-/* header */
+/* HEADER */
 header {
   background: #2b3137;
   padding: 15px 0 5px 0;
@@ -87,7 +87,7 @@ header .search #sign-up {
   border-radius: 5px;
 }
 
-/* main */
+/* MAIN */
 main {
   background: #2b3137;
 }
@@ -179,12 +179,15 @@ main .info form .signup-btn {
   cursor: pointer;
 }
 
-/* footer */
+/* FOOTER */
+footer .container {
+  height: 140px;
+}
 
 footer .git {
   width: 400px;
   height: 173px;
-  margin: 0 170px;
+  margin: 0 20px;
   position: absolute;
   right: 0;
   bottom: 0;
