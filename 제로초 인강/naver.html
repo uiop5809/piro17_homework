@@ -21,16 +21,21 @@
             </h1>
           </a>
           <h2 class="blind">검색창</h2>
-          <fieldset>
-            <legend class="blind">검색</legend>
-            <input />
-            <span id="search-keyboard"></span>
-            <span id="search-history"></span>
-            <button>
-              <span class="blind">검색</span>
-              <span id="search-image"></span>
-            </button>
-          </fieldset>
+          <form
+            class="inline-block"
+            action="https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query="
+          >
+            <fieldset>
+              <legend class="blind">검색</legend>
+              <input />
+              <span id="search-keyboard"></span>
+              <span id="search-history"></span>
+              <button type="submit">
+                <span class="blind">검색</span>
+                <span id="search-image"></span>
+              </button>
+            </fieldset>
+          </form>
         </div>
       </div>
     </header>
@@ -153,7 +158,22 @@
         <div id="main-first-block">
           <div id="main-ad"></div>
           <div id="main-login">
-            <h3>로그인</h3>
+            <div class="login-wrapper">
+              <span class="login-text"
+                >네이버를 더 안전하고 편리하게 이용하세요.</span
+              >
+              <a
+                href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com"
+              >
+                <span class="blind">NAVER 로그인</span>
+                <span class="login-image"></span>
+              </a>
+              <a
+                class="login-signup"
+                href="https://nid.naver.com/nidregister.form?url=https%3A%2F%2Fwww.naver.com"
+                >회원가입</a
+              >
+            </div>
           </div>
         </div>
         <div id="main-second-block">
