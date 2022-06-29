@@ -266,9 +266,6 @@ nav li:nth-child(16) span:first-child {
 
 main {
   background-color: #f2f4f7;
-  overflow: auto;
-}
-
-main h3:nth-of-type(2) {
-  background: red;
+  display: inline-block;
+  width: 100%;
 }
