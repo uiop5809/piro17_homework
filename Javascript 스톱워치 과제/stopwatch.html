@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <link rel="stylesheet" href="stopwatch.css" />
+    <title>피로그래밍 스톱워치</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">
+        <i class="fa-solid fa-stopwatch"></i> 피로그래밍 스톱워치
+      </h1>
+      <div class="clock">
+        <div class="clock__time">00:00</div>
+        <div class="clock__flex-box">
+          <div class="start">start</div>
+          <div class="stop">stop</div>
+          <div class="reset">reset</div>
+        </div>
+      </div>
+      <div class="record">
+        <div class="record__flex-box">
+          <div><i id="all" class="fa-regular fa-circle"></i></div>
+          <div>구간 기록</div>
+          <div><i id="del" class="fa-solid fa-trash"></i></div>
+        </div>
+        <ul class="record__box"></ul>
+      </div>
+    </div>
+
+    <script src="stopwatch.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a8a24f1fa9.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

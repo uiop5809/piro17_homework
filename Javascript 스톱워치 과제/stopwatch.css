@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 530px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.clock {
+  background-color: #bbcdbe;
+  padding: 30px;
+  border-radius: 30px;
+  margin: 15px 30px 40px;
+  box-shadow: 5px 5px 10px rgb(147, 147, 147);
+}
+
+.clock__time {
+  width: 100%;
+  background-color: white;
+  margin: 20px 0;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 4.5rem;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  padding: 20px 0;
+}
+
+.clock__flex-box {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 30px;
+}
+
+.clock__flex-box div {
+  width: 65px;
+  height: 65px;
+  text-align: center;
+  line-height: 60px;
+  background-color: rgb(241, 239, 239);
+  border-radius: 23px;
+  font-size: 1.2rem;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  box-shadow: 3px 3px 8px rgb(147, 147, 147);
+  cursor: pointer;
+}
+
+.record__flex-box {
+  display: flex;
+  justify-content: space-between;
+  background-color: #bbcdbe;
+  padding: 15px 30px;
+  border-radius: 20px 20px 0 0;
+}
+
+.record__box li {
+  display: flex;
+  padding: 20px 30px 0;
+}
+
+.record__box li div {
+  margin-left: 180px;
+}
+
+.record__flex-box div,
+.record__box li {
+  font-size: 1.6rem;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+}
+
+.record__flex-box div i,
+.record__box li i {
+  font-size: 2rem;
+}
+
+.record__flex-box div i:hover,
+.record__box li i:hover {
+  cursor: pointer;
+}
+
+#del:hover {
+  color: red;
+  transition: 0.5s;
+}
+
+.record__flex-box .fa-circle {
+  transition: 0.5s;
+}
