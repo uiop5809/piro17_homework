@@ -3,10 +3,9 @@ const startEl = document.querySelector(".start");
 const stopEl = document.querySelector(".stop");
 const resetEl = document.querySelector(".reset");
 
-const recordBox = document.querySelector(".record__box");
-
 const allBtn = document.querySelector("#all");
 const delBtn = document.querySelector("#del");
+const recordBox = document.querySelector(".record__box");
 
 let time = 0;
 
@@ -55,19 +54,6 @@ function delCheck() {
   });
 }
 
-function oneCheck() {
-  recordList = document.querySelectorAll(".record__box li i");
-  recordList.forEach((item) => {
-    item.addEventListener("click", () => {
-      if (item.classList.contains("fa-circle-check")) {
-        item.classList.remove("fa-circle-check");
-      } else {
-        item.classList.add("fa-circle-check");
-      }
-    });
-  });
-}
-
 startEl.addEventListener("click", startClock);
 stopEl.addEventListener("click", stopClock);
 resetEl.addEventListener("click", resetClock);
@@ -75,4 +61,10 @@ resetEl.addEventListener("click", resetClock);
 allBtn.addEventListener("click", allCheck);
 delBtn.addEventListener("click", delCheck);
 
-recordBox.addEventListener("click", oneCheck);
+recordBox.addEventListener("click", (e) => {
+  if (e.target.classList.contains("fa-circle-check")) {
+    e.target.classList.remove("fa-circle-check");
+  } else {
+    e.target.classList.add("fa-circle-check");
+  }
+});
