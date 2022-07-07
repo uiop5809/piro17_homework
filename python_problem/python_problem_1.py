@@ -22,6 +22,7 @@ while True:
     num += cnt
 
     if flag == True:
+        print("playerB win!")
         break
 
     # playerB
@@ -44,4 +45,5 @@ while True:
     num += cnt
 
     if flag == True:
+        print("playerA win!")
         break
