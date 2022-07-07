@@ -1,3 +1,5 @@
+import random
+
 num = 0
 flag = False
 
@@ -14,28 +16,28 @@ def brGame():
             print(e)
 
 while True:
-    # playerA
-    cnt = brGame()
+    # computer
+    cnt = random.randint(1, 3)
     for i in range(num, num + cnt):
-        print("playerA :", i + 1)
+        print("computer :", i + 1)
         if i + 1 == 31:
             flag = True
             break
     num += cnt
 
     if flag == True:
-        print("playerB win!")
+        print("player win!")
         break
-    
-    # playerB
+
+    # player
     cnt = brGame()
     for i in range(num, num + cnt):
-        print("playerB :", i + 1)
+        print("player :", i + 1)
         if i + 1 == 31:
             flag = True
             break
     num += cnt
 
     if flag == True:
-        print("playerA win!")
+        print("computer win!")
         break
