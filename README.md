@@ -62,8 +62,11 @@
 - 노션에 있는 2문제 풀기
 
   **문제 1**
+
   ![문제1](./python_problem/실행1.png)
 
   **문제 2**
+
   ![문제2](./python_problem/실행2.png)
+
   ![문제2](./python_problem/실행3.png)
