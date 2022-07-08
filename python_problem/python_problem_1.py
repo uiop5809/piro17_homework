@@ -1,8 +1,5 @@
 import random
 
-num = 0
-flag = False
-
 def brGame():
     while True:
         try:
@@ -15,29 +12,22 @@ def brGame():
         except Exception as e:
             print(e)
 
+num = 0
 while True:
     # computer
     cnt = random.randint(1, 3)
-    for i in range(num, num + cnt):
-        print("computer :", i + 1)
-        if i + 1 == 31:
-            flag = True
-            break
-    num += cnt
-
-    if flag == True:
-        print("player win!")
-        break
+    for i in range(cnt):
+        print("computer :", num + 1)
+        num += 1
+        if num == 31:
+            print("player win!")
+            exit()
 
     # player
     cnt = brGame()
-    for i in range(num, num + cnt):
-        print("player :", i + 1)
-        if i + 1 == 31:
-            flag = True
-            break
-    num += cnt
-
-    if flag == True:
-        print("computer win!")
-        break
+    for i in range(cnt):
+        print("player :", num + 1)
+        num += 1
+        if num == 31:
+            print("computer win!")
+            exit()
