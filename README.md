@@ -70,3 +70,13 @@
   ![문제2](./python_problem/실행2.png)
 
   ![문제2](./python_problem/실행3.png)
+
+## 7월 9일 토요일
+
+1. 파이썬 게임 만들기 팀플
+
+## 7월 12일 화요일
+
+1. DjangoGirls 튜토리얼 따라하기
+
+   ![장고걸스](./djangogirls/결과물.png)
