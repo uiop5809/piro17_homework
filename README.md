@@ -85,4 +85,4 @@ DjangoGirls 튜토리얼 따라하기
 
 "나만의 영화 기록 사이트" 제작
 
-![영화사이트](./myMovieReviews/home.png)
+![영화사이트](./myMovieReviews/결과물/home.png)
