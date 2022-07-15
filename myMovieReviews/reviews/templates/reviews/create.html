@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/reviews.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <title>My Movie reviews</title>
+  </head>
+  <body>
+    <header class="container">
+      <div class="header__flex_box">
+        <div class="logo">
+          <a href="{% url 'reviews:home' %}">my <span>Movie</span> reviews</a>
+        </div>
+        <div class="add_review">
+          <a href="{% url 'reviews:create' %}">Add a New review</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="create">
+        <div class="create_title"><span>Movie</span> review🍿</div>
+        <form action="{% url 'reviews:create' %}" method="post">
+          {% csrf_token %}
+          <p>제목: <input type="text" name="title" /></p>
+          <p>개봉년도: <input type="text" name="year" /></p>
+          <p>
+            장르:
+            <select name="genre">
+              {% for key, value in genre %}
+              <option value="{{ value }}">{{ value }}</option>
+              {% endfor %}
+            </select>
+          </p>
+          <p>별점: <input type="number" step="0.1" name="grade" /></p>
+          <p>러닝타임: <input type="number" name="time" /></p>
+          <p>리뷰:</p>
+          <textarea name="review" id="" cols="70" rows="10"></textarea>
+          <p>감독: <input type="director" name="director" /></p>
+          <p>배우: <input type="actor" name="actor" /></p>
+          <div class="create__submit">
+            <button type="submit">Save</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

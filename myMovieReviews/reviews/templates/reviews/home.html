@@ -1,0 +1,61 @@
+<!-- 정적 파일 로딩 -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/reviews.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <title>My Movie reviews</title>
+  </head>
+  <body>
+    <header class="container">
+      <div class="header__flex_box">
+        <div class="logo">
+          <a href="{% url 'reviews:home' %}">my <span>Movie</span> reviews</a>
+        </div>
+        <div class="add_review">
+          <a href="{% url 'reviews:create' %}">Add a New review</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="home__container">
+        <div class="home__sort">
+          <form>
+            <button name="sort" value="title">제목 이름 순</button>
+            <button name="sort" value="grade">별점 순</button>
+            <button name="sort" value="time">상영 시간 순</button>
+          </form>
+        </div>
+        <div class="main__flex_box">
+          {% for review in reviews %}
+          <div class="home__movie_box">
+            <div class="home__movie_img">
+              <img
+                src="https://picsum.photos/seed/{{review.id}}/150/200"
+                alt=""
+              />
+            </div>
+            <div class="home__movie_info">
+              <h1 class="title">
+                <a href="{% url 'reviews:detail' review.id %}"
+                  >{{review.title}}</a
+                >
+              </h1>
+              <p class="year"><span>개봉년도</span> {{review.year}}</p>
+              <p class="genre"><span>장르</span> {{review.genre}}</p>
+              <p class="grade"><span>별점</span> {{review.grade}}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

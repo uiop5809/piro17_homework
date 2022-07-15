@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/reviews.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <title>My Movie reviews</title>
+  </head>
+  <body>
+    <header class="container">
+      <div class="header__flex_box">
+        <div class="logo">
+          <a href="{% url 'reviews:home' %}">my <span>Movie</span> reviews</a>
+        </div>
+        <div class="add_review">
+          <a href="{% url 'reviews:create' %}">Add a New review</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="detail_container">
+        <div class="detail_title">
+          <h2>{{ review.title }}</h2>
+          <div class="detail_button">
+            <div class="detail_modify">
+              <a href="{% url 'reviews:update' review.id %}">수정</a>
+            </div>
+            <form action="{% url 'reviews:delete' review.id %}" method="post">
+              {% csrf_token %} <button>삭제</button>
+            </form>
+          </div>
+        </div>
+        <div class="detail__box">
+          <div class="detail__movie_img">
+            <img
+              src="https://picsum.photos/seed//{{review.id}}/150/200"
+              alt=""
+            />
+          </div>
+          <div class="detail__info">
+            <p class="year"><span>개봉년도</span> {{ review.year }}</p>
+            <p class="director"><span>감독</span> {{ review.director }}</p>
+            <p class="actor"><span>주연</span> {{ review.actor }}</p>
+            <p class="genre"><span>장르</span> {{ review.genre }}</p>
+            <p class="grade"><span>별점</span> {{ review.grade }}</p>
+            <p class="time">
+              <span>러닝타임</span> {{ hour }}시간 {{ minute }}분
+            </p>
+          </div>
+        </div>
+        <div class="detail_review">{{review.review}}</div>
+      </div>
+    </main>
+  </body>
+</html>

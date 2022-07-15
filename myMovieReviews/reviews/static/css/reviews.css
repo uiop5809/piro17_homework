@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+button,
+.detail_modify {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background: rgb(227, 226, 226);
+  font-weight: bold;
+}
+
+button:hover {
+  background: darkgray;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+header a {
+  letter-spacing: -0.05rem;
+}
+
+.header__flex_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  padding: 25px 50px;
+}
+
+.logo {
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #f9255d;
+}
+
+.home__container {
+  width: 1050px;
+  margin: 0 auto;
+}
+
+.home__sort {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.main__flex_box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  justify-content: left;
+}
+
+.home__movie_box {
+  background: #f2f2f2;
+  margin: 0 20px 40px 20px;
+  width: 220px;
+  height: 400px;
+  padding: 20px;
+}
+
+.home__movie_img {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.home__movie_info {
+  line-height: 1.8em;
+}
+
+.home__movie_info .title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.home__movie_info .year,
+.home__movie_info .genre,
+.home__movie_info .grade {
+  font-size: 0.9em;
+}
+
+.home__movie_info span {
+  color: gray;
+  font-weight: bold;
+}
+
+.create,
+.update {
+  background: #f2f2f2;
+  border-radius: 10px;
+  width: 650px;
+  margin: 0 auto;
+  padding: 20px 60px;
+  margin-top: 10px;
+}
+
+.create form,
+.update form {
+  line-height: 2.4em;
+}
+
+.create form input,
+.update form input {
+  border-radius: 3px;
+  border: lightgray solid 1px;
+  height: 1.8em;
+}
+
+.create form textarea,
+.update form textarea {
+  border-radius: 3px;
+  border: lightgray solid 1px;
+}
+
+.create_title,
+.update_title {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-left: 10px;
+  text-align: center;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid gray;
+  margin-bottom: 30px;
+}
+
+.create_title span,
+.update_title span {
+  color: #f9255d;
+}
+
+.create__submit,
+.update__submit {
+  text-align: right;
+}
+
+.create__submit button,
+.update__submit button {
+  padding: 5px 15px;
+  background: white;
+  border-radius: 3px;
+  border: lightgray solid 1px;
+}
+
+.detail_modify {
+  margin-right: 10px;
+}
+
+.detail_modify a {
+  font-size: 13.5px;
+  line-height: 13.5px;
+}
+
+.detail_container {
+  margin: 0 40px;
+}
+
+.detail_title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.8em;
+  font-weight: bold;
+  padding: 40px 0 30px;
+}
+
+.detail_title .detail_button {
+  display: flex;
+  font-size: 0.5em;
+}
+
+.detail__box {
+  background: #f2f2f2;
+  padding: 10px 20px;
+  line-height: 2rem;
+  display: flex;
+}
+
+.detail__box .detail__movie_img {
+  margin-right: 20px;
+}
+
+.detail__box .detail__info {
+  font-size: 0.9em;
+}
+
+.detail__box .detail__info span {
+  color: gray;
+  font-weight: bold;
+}
+
+.detail_review {
+  background: #f2f2f2;
+  margin-top: 15px;
+  border-radius: 3px;
+  padding: 10px 20px;
+  line-height: 1.4rem;
+}
