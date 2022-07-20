@@ -11,7 +11,6 @@ urlpatterns = [
   path("IdeaDetail/<int:id>/", views.IdeaDetail, name="IdeaDetail"),
   path("IdeaUpdate/<int:id>/", views.IdeaUpdate, name="IdeaUpdate"),
   path("IdeaDelete/<int:id>/", views.IdeaDelete, name="IdeaDelete"),
-  path("like/", views.likes, name="likes"),
 
   path("ToolHome", views.ToolHome, name="ToolHome"),
   path("ToolCreate", views.ToolCreate, name="ToolCreate"),

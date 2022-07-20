@@ -14,4 +14,4 @@ class Idea(models.Model):
   devtool = models.ForeignKey(Tool, on_delete=models.CASCADE, related_name="dev_tool", verbose_name="개발툴")
   created_at = models.DateTimeField(auto_now_add=True, verbose_name="생성일")
   updated_at = models.DateTimeField(auto_now=True, verbose_name="수정일")
-  like = models.ManyToManyField(User, related_name="likes", blank="True", verbose_name="찜하기")
+  like = models.BooleanField(default=False, verbose_name="찜하기")

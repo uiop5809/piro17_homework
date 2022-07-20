@@ -8,7 +8,12 @@ from django.http import HttpResponse, JsonResponse
 def IdeaHome(request):
   if(request.method == "POST"):
     req = json.loads(request.body)
-    Idea.objects.filter(id = req["id"]).update(interest = req["interest"])
+    try:
+      Idea.objects.filter(id = req["id"]).update(interest = req["interest"])
+    except KeyError:
+      pass
+    like = Idea.objects.get(id = req["star"]).like
+    Idea.objects.filter(id = req["star"]).update(like = not like)
 
   ideas = Idea.objects.all()
   sort = request.GET.get("sort", "")
@@ -82,27 +87,6 @@ def IdeaDelete(request, id):
     Idea.objects.filter(id=id).delete()
     return redirect('/')
 
-def likes(request):
-  if request.is_ajax():
-    idea_id = request.GET["idea_id"]
-    idea = Idea.objects.get(id=idea_id)
-
-    if not request.user.is_authenticated:
-      message = "로그인이 필요합니다."
-      context = {"like_count": idea.like.count(), "message": message}
-      return HttpResponse(json.dumps(context), content_type="application/json")
-    
-    user = request.user
-    if idea.like.filter(id=user.id).exists():
-      idea.like.remove(user)
-      message = "좋아요 취소되었습니다."
-    else:
-      idea.like.add(user)
-      message = "좋아요 되었습니다."
-
-    context = {"like_count": idea.like.count(), "message": message}
-    return HttpResponse(json.dumps(context), content_type="application/json")
-      
 def ToolHome(request):
   tools = Tool.objects.all()
   context = {

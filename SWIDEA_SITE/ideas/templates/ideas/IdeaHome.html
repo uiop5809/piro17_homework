@@ -11,6 +11,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
     />
+    <script
+      src="https://kit.fontawesome.com/a8a24f1fa9.js"
+      crossorigin="anonymous"
+    ></script>
     <title>My SW Idea Manage</title>
   </head>
   <body>
@@ -56,6 +60,17 @@
             {% if idea.image %}
             <div class="idea__image">
               <img src="{{ idea.image.url }}" alt="" />
+              <button
+                class="idea__like_btn"
+                id="{{ idea.id }}"
+                onclick="like({{ idea.id }})"
+              >
+                {% if idea.like == False %}
+                <i class="fa-regular fa-star"></i>
+                {% else %}
+                <i class="fa-solid fa-star"></i>
+                {% endif %}
+              </button>
             </div>
             {% endif %}
             <h1 class="idea__title">
@@ -79,11 +94,7 @@
       </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"
-    ></script>
     <script src="/static/javascripts/updown.js" type="text/javascript"></script>
+    <script src="/static/javascripts/like.js" type="text/javascript"></script>
   </body>
 </html>

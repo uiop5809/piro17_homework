@@ -11,6 +11,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
     />
+    <script
+      src="https://kit.fontawesome.com/a8a24f1fa9.js"
+      crossorigin="anonymous"
+    ></script>
     <title>My SW Idea Manage</title>
   </head>
   <body>
@@ -44,7 +48,16 @@
         <div class="idea__flex_box">
           <img src="{{ idea.image.url }}" alt="" />
           <div class="idea__description">
-            <p class="idea__title">{{ idea.title }}</p>
+            <div class="idea__like">
+              <p class="idea__title">{{ idea.title }}</p>
+              <div class="idea__like_btn">
+                {% if idea.like == False %}
+                <i class="fa-regular fa-star"></i>
+                {% else %}
+                <i class="fa-solid fa-star"></i>
+                {% endif %}
+              </div>
+            </div>
             <div>
               <p class="idea__interest">1) 아이디어 관심도</p>
               {{ idea.interest }}

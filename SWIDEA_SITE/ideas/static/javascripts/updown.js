@@ -4,7 +4,6 @@ const plus = (id) => {
   interest++;
   document.getElementById(id).innerText = interest;
   const { data } = axios.post("/", { id, interest });
-  console.log(data);
 };
 
 const minus = (id) => {

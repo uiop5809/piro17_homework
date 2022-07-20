@@ -19,7 +19,7 @@
 
 .idea__desc2 {
   color: white;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .idea__flex_box {
@@ -29,7 +29,7 @@
 }
 
 .idea__flex_box img {
-  width: 380px;
+  width: 330px;
   height: 300px;
   margin-right: 20px;
 }
@@ -42,6 +42,21 @@
   margin-bottom: 30px;
   font-size: 17px;
   line-height: 1.2em;
+}
+
+.idea__like {
+  position: relative;
+}
+
+.idea__like_btn {
+  position: absolute;
+  top: 0;
+  right: -40px;
+}
+
+.idea__like_btn i {
+  color: rgb(241, 241, 24);
+  font-size: 20px;
 }
 
 .idea__title {
@@ -58,7 +73,7 @@
 .idea__button {
   display: flex;
   justify-content: center;
-  margin: 20px 0 50px 0;
+  margin: 10px 0 50px 0;
 }
 
 .idea__del_btn,

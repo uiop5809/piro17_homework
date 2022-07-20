@@ -41,6 +41,23 @@
   justify-content: space-around;
 }
 
+.idea__image {
+  position: relative;
+}
+
+.idea__like_btn {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+
+.idea__like_btn i {
+  color: rgb(241, 241, 24);
+  font-size: 20px;
+}
+
 .idea__box {
   background: rgb(183, 226, 244);
   border-radius: 7px;
