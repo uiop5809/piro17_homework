@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/common.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/IdeaHome.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <title>My SW Idea Manage</title>
+  </head>
+  <body>
+    <header>
+      <div class="header__bar container">
+        <div class="header__title">
+          <a href="{% url 'ideas:IdeaHome' %}"
+            >My <span>SW Idea</span> Manage</a
+          >
+        </div>
+        <div class="header__navbar">
+          <ul>
+            <li><a href="{% url 'ideas:IdeaCreate' %}">아이디어 등록</a></li>
+            <li><a href="{% url 'ideas:IdeaHome' %}">아이디어 관리</a></li>
+            <li><a href="{% url 'ideas:ToolCreate' %}">개발툴 등록</a></li>
+            <li><a href="{% url 'ideas:ToolHome' %}">개발툴 관리</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="idea__list container">
+        <div class="idea__desc">
+          <h2 class="idea__desc1">Idea List</h2>
+          <p class="idea__desc2">나의 아이디어를 잊지 말고 기록해보세요</p>
+        </div>
+
+        <div class="idea__sort">
+          <form action="{% url 'ideas:IdeaHome' %}">
+            <select name="sort" onchange="this.form.submit()">
+              <option value="default" selected>--정렬기준--</option>
+              <option value="like">찜하기순</option>
+              <option value="createAt">등록순</option>
+              <option value="updateAt">최신순</option>
+              <option value="title">이름순</option>
+            </select>
+          </form>
+        </div>
+
+        <div class="idea__flex_box">
+          {% for idea in ideas %}
+          <div class="idea__box">
+            {% if idea.image %}
+            <div class="idea__image">
+              <img src="{{ idea.image.url }}" alt="" />
+            </div>
+            {% endif %}
+            <h1 class="idea__title">
+              <a href="{% url 'ideas:IdeaDetail' idea.id %}">{{idea.title}}</a>
+            </h1>
+            <hr class="idea__hr" />
+            <div class="idea__content">
+              <p>예상 개발 툴: {{idea.devtool.name}}</p>
+              <div>
+                <p>
+                  아이디어 관심도:
+                  <span onclick="plus({{ idea.id }})"> + </span>
+                  <span id="{{idea.id}}">{{idea.interest}}</span>
+                  <span onclick="minus({{ idea.id }})"> - </span>
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/static/javascripts/updown.js" type="text/javascript"></script>
+  </body>
+</html>

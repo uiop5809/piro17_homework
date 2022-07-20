@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/common.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/IdeaCreate.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <title>My SW Idea Manage</title>
+  </head>
+  <body>
+    <header>
+      <div class="header__bar container">
+        <div class="header__title">
+          <a href="{% url 'ideas:IdeaHome' %}"
+            >My <span>SW Idea</span> Manage</a
+          >
+        </div>
+        <div class="header__navbar">
+          <ul>
+            <li><a href="{% url 'ideas:IdeaCreate' %}">아이디어 등록</a></li>
+            <li><a href="{% url 'ideas:IdeaHome' %}">아이디어 관리</a></li>
+            <li><a href="{% url 'ideas:ToolCreate' %}">개발툴 등록</a></li>
+            <li><a href="{% url 'ideas:ToolHome' %}">개발툴 관리</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="idea__list container">
+        <div class="idea__desc">
+          <h2 class="idea__desc1">Idea Register</h2>
+          <p class="idea__desc2">
+            아이디어 등록 페이지 입니다. 당신의 아이디어를 잊지 말고 기록하세요!
+          </p>
+        </div>
+        <div class="idea__create_box">
+          <form
+            action="{% url 'ideas:IdeaCreate' %}"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            {% csrf_token %}
+            <p>아이디어명:</p>
+            <input type="text" name="title" />
+            <p>Image:</p>
+            <input type="file" name="image" />
+            <p>아이디어 설명:</p>
+            <textarea rows="10" cols="50" name="content"></textarea>
+            <p>아이디어 관심도:</p>
+            <input type="number" name="interest" value="0" />
+            <p>예상 개발 툴:</p>
+            <select name="devtool">
+              {% for devtool in devtools %}
+              <option value="{{ devtool.name }}">{{ devtool.name }}</option>
+              {% endfor %}
+            </select>
+            <div class="idea__submit">
+              <button type="submit">SUBMIT</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

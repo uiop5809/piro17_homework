@@ -1,0 +1,83 @@
+.idea__list {
+  padding: 10px 40px;
+  margin-top: 50px;
+  height: 550px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.idea__desc {
+  text-align: center;
+  width: 100%;
+}
+
+.idea__desc1 {
+  color: #d6fe5e;
+  font-size: 1.5em;
+  font-weight: 800;
+  padding: 12px 0 7px 0;
+}
+
+.idea__desc2 {
+  color: white;
+  margin-bottom: 50px;
+}
+
+.idea__flex_box {
+  display: flex;
+  border: 2px solid white;
+  padding: 40px;
+}
+
+.idea__flex_box img {
+  width: 380px;
+  height: 300px;
+  margin-right: 20px;
+}
+
+.idea__description {
+  color: white;
+}
+
+.idea__description div {
+  margin-bottom: 30px;
+  font-size: 17px;
+  line-height: 1.2em;
+}
+
+.idea__title {
+  font-size: 2em;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.idea__tool_link {
+  color: white;
+  text-shadow: 2px 2px 3px #d6fe5e;
+}
+
+.idea__button {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 50px 0;
+}
+
+.idea__del_btn,
+.idea__list_btn,
+.idea__mod_btn {
+  padding: 7px 12px;
+  margin: 20px 30px 0 30px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.idea__del_btn {
+  background-color: red;
+  color: white;
+}
+
+.idea__mod_btn {
+  background-color: royalblue;
+  color: white;
+}

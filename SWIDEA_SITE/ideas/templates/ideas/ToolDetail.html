@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/common.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/ToolDetail.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <title>My SW Idea Manage</title>
+  </head>
+  <body>
+    <header>
+      <div class="header__bar container">
+        <div class="header__title">
+          <a href="{% url 'ideas:IdeaHome' %}"
+            >My <span>SW Idea</span> Manage</a
+          >
+        </div>
+        <div class="header__navbar">
+          <ul>
+            <li><a href="{% url 'ideas:IdeaCreate' %}">아이디어 등록</a></li>
+            <li><a href="{% url 'ideas:IdeaHome' %}">아이디어 관리</a></li>
+            <li><a href="{% url 'ideas:ToolCreate' %}">개발툴 등록</a></li>
+            <li><a href="{% url 'ideas:ToolHome' %}">개발툴 관리</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="tool__list container">
+        <div class="tool__desc">
+          <h2 class="tool__desc1">DevTool Detail</h2>
+          <p class="tool__desc2">
+            개발툴 세부내용 페이지 입니다. 자신이 다룰 수 있는 개발툴에 대한
+            상세내용을 확인해 보세요.
+          </p>
+        </div>
+
+        <div class="tool__flex_box">
+          <div class="tool__box">
+            <p class="tool__name">{{ tool.name }}</p>
+            <p class="tool__kind">{{ tool.kind }}</p>
+            <p class="tool__content">{{ tool.content }}</p>
+          </div>
+          <div class="tool__make_box">
+            <p class="tool__make">&gt; 만들 수 있는 SW 목록</p>
+            {% for idea in ideas %}
+            <div>{{ idea.title }}</div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="tool__button">
+          <form action="{% url 'ideas:ToolDelete' tool.id %}" method="post">
+            {% csrf_token %} <button class="tool__del_btn">삭제</button>
+          </form>
+          <a href="{% url 'ideas:ToolHome' %}"
+            ><button class="tool__list_btn">목록</button>
+          </a>
+          <a href="{% url 'ideas:ToolUpdate' tool.id %}"
+            ><button class="tool__mod_btn">수정</button></a
+          >
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+.tool__list {
+  padding: 10px;
+  margin-top: 50px;
+  height: 550px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.tool__desc {
+  text-align: center;
+  width: 100%;
+}
+
+.tool__desc1 {
+  color: #d6fe5e;
+  font-size: 1.5em;
+  font-weight: 800;
+  padding: 12px 0 7px 0;
+}
+
+.tool__desc2 {
+  color: white;
+  margin-bottom: 50px;
+}
+
+.tool__create_box {
+  width: 400px;
+  margin: 0 auto;
+  line-height: 1.5em;
+  color: white;
+}
+
+.tool__create_box input,
+.tool__create_box textarea {
+  border-radius: 5px;
+}
+
+.tool__create_box .tool__submit {
+  text-align: center;
+}
+
+.tool__create_box .tool__submit button {
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 5px 30px;
+  background-color: transparent;
+  margin-top: 10px;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+}

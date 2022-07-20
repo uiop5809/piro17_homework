@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/common.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/IdeaUpdate.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <title>My SW Idea Manage</title>
+  </head>
+  <body>
+    <header>
+      <div class="header__bar container">
+        <div class="header__title">
+          <a href="{% url 'ideas:IdeaHome' %}"
+            >My <span>SW Idea</span> Manage</a
+          >
+        </div>
+        <div class="header__navbar">
+          <ul>
+            <li><a href="{% url 'ideas:IdeaCreate' %}">아이디어 등록</a></li>
+            <li><a href="{% url 'ideas:IdeaHome' %}">아이디어 관리</a></li>
+            <li><a href="{% url 'ideas:ToolCreate' %}">개발툴 등록</a></li>
+            <li><a href="{% url 'ideas:ToolHome' %}">개발툴 관리</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="idea__list container">
+        <div class="idea__desc">
+          <h2 class="idea__desc1">Idea Detail Update</h2>
+          <p class="idea__desc2">
+            아이디어 세부내용 수정 페이지 입니다. 아이디어를 구체화하거나 내용을
+            변경해 보아요.
+          </p>
+        </div>
+        <div class="idea__update_box">
+          <form
+            action="{% url 'ideas:IdeaUpdate' idea.id %}"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            {% csrf_token %}
+            <p>아이디어명:</p>
+            <input type="text" name="title" value="{{idea.title}}" />
+            <div>
+              <p>Image:</p>
+              <p>Currently: {{ idea.image.url }}</p> 
+              <p>Change: <input type="file" name="image" /></p>
+            </div>
+            <p>아이디어 설명:</p>
+            <textarea rows="10" cols="50" name="content">{{idea.content}}</textarea
+            >
+            <p>아이디어 관심도:</p>
+            <input type="number" name="interest" value="{{idea.interest}}" />
+            <select name="devtool" id="devtool">
+              {% for devtool in devtools %} 
+              <option value="{{ devtool.id }}" {% if devtool.id == idea.devtool.id %} selected {% endif %}>
+                {{ devtool.name }}
+              </option>
+              {% endfor %}
+            </select>
+            <div class="idea__submit">
+              <button type="submit">SUBMIT</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
