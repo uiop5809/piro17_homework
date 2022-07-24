@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #fafafa;
+}
+
+i,
+button {
+  cursor: pointer;
+}
+
+.post_box {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  width: 460px;
+  margin: 10px auto;
+  background: white;
+}
+
+/* profile */
+.post_profile_box {
+  display: flex;
+  padding: 0 5px;
+}
+
+.post_profile_box img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #d720cb;
+  margin: 10px;
+}
+
+.post_profile_box .post_profile {
+  font-weight: 500;
+  width: 78%;
+  height: 100%;
+  margin: auto 0;
+}
+
+#profile_location {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+#profile_dot {
+  height: 100%;
+  margin: auto 0;
+}
+
+#profile_dot i {
+  font-size: 18px;
+}
+
+.post_image {
+  margin: 0 auto 10px;
+}
+
+.post_image img {
+  height: 400px;
+  width: 100%;
+  border: 1px solid lightgray;
+}
+
+/* post icon */
+.post_icon {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 10px;
+}
+
+.post_icon i {
+  font-size: 23px;
+  margin-right: 12px;
+}
+
+.post_icon_right i {
+  margin: 0;
+}
+
+/* comment list */
+.comment {
+  display: flex;
+  padding: 0 10px;
+  margin: 10px 0;
+}
+
+.comment div {
+  height: 20px;
+}
+
+.comment_name {
+  width: 25%;
+  font-weight: 800;
+}
+
+.comment_content {
+  width: 65%;
+}
+
+.comment_like,
+.comment_delete {
+  width: 5%;
+  text-align: right;
+}
+
+.comment_like i {
+  color: #ed4956;
+  font-size: 20px;
+}
+
+/* comment new */
+.comment_new {
+  border-top: 1px solid lightgray;
+  display: flex;
+  padding: 10px;
+}
+
+#comment_new_smile {
+  height: 100%;
+  margin: auto 0 auto 5px;
+}
+
+#comment_new_smile i {
+  font-size: 22px;
+}
+
+#comment_new_text {
+  width: 100%;
+  height: 100%;
+  margin: auto 0;
+}
+
+#comment_new_text input {
+  border: none;
+  height: 30px;
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+#comment_new_text input:focus {
+  outline: none;
+}
+
+#comment_new_submit {
+  height: 100%;
+  width: 50px;
+  margin: auto 0;
+}
+
+#comment_new_submit button {
+  background-color: transparent;
+  border: none;
+  color: skyblue;
+  opacity: 0.5;
+  font-weight: 800;
+}

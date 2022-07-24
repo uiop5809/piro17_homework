@@ -1,0 +1,109 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="post_box">
+  <!-- profile -->
+  <div class="post_profile_box">
+    <img src="{% static 'image/profile.jpg' %}" alt="프로필" />
+    <div class="post_profile">
+      <div id="profile_name">park_ye_jin__</div>
+      <div id="profile_location">강아지고양이 집</div>
+    </div>
+    <div id="profile_dot"><i class="fa-solid fa-ellipsis"></i></div>
+  </div>
+  <div class="post_image">
+    <img src="{% static 'image/post.jpg' %}" alt="게시물사진" />
+  </div>
+  <!-- comment list -->
+  <div class="post_icon">
+    <div class="post_icon_left">
+      <i class="fa-regular fa-heart"></i>
+      <i class="fa-regular fa-comment"></i>
+      <i class="fa-solid fa-location-arrow"></i>
+    </div>
+    <div class="post_icon_right">
+      <i class="fa-regular fa-bookmark"></i>
+    </div>
+  </div>
+  {% for comment in comments %}
+  <div id="comment_{{ comment.id }}" class="comment">
+    <div class="comment_name">{{ comment.name }}</div>
+    <div class="comment_content">{{ comment.content }}</div>
+    <div
+      class="comment_like"
+      id="{{ comment.id }}"
+      onclick="onClickLike({{ comment.id }})"
+    >
+      {% if comment.like == False %}
+      <i id="like_{{ comment.id }}" class="fa-regular fa-heart"></i>
+      {% else %}
+      <i id="like_{{ comment.id }}" class="fa-solid fa-heart"></i>
+      {% endif %}
+    </div>
+    <div class="comment_delete" onclick="onClickX({{ comment.id }})">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  </div>
+  {% endfor %}
+  <!-- comment new -->
+  <form action="" method="POST" class="comment_new">
+    {% csrf_token %}
+    <div id="comment_new_smile">
+      <i class="fa-regular fa-face-smile"></i>
+    </div>
+    <div id="comment_new_text">
+      <input type="text" name="content" placeholder="댓글 달기..." />
+    </div>
+    <div id="comment_new_submit">
+      <button type="submit">게시</button>
+    </div>
+  </form>
+</div>
+{% endblock %} {% block extra %}
+
+<script>
+  const requestLike = new XMLHttpRequest();
+  const onClickLike = (id) => {
+    const url = "/like_ajax/";
+    requestLike.open("POST", url, true);
+    requestLike.setRequestHeader(
+      "Content-Type",
+      "application/x-www-form-urlencoded"
+    );
+    requestLike.send(JSON.stringify({ id: id }));
+  };
+  requestLike.onreadystatechange = () => {
+    if (requestLike.readyState === XMLHttpRequest.DONE) {
+      if (requestLike.status < 400) {
+        const { id } = JSON.parse(requestLike.response);
+        const like = document.querySelector(`#like_${id}`);
+        if (like.classList.contains("fa-regular")) {
+          like.classList.remove("fa-regular");
+          like.classList.add("fa-solid");
+        } else {
+          like.classList.remove("fa-solid");
+          like.classList.add("fa-regular");
+        }
+      }
+    }
+  };
+
+  const requestX = new XMLHttpRequest();
+  const onClickX = (id) => {
+    const url = "/delete_ajax/";
+    requestX.open("POST", url, true);
+    requestX.setRequestHeader(
+      "Content-Type",
+      "application/x-www-form-urlencoded"
+    );
+    requestX.send(JSON.stringify({ id: id }));
+  };
+  requestX.onreadystatechange = () => {
+    if (requestX.readyState === XMLHttpRequest.DONE) {
+      if (requestX.status < 400) {
+        const { id } = JSON.parse(requestX.response);
+        const comment = document.querySelector(`#comment_${id}`);
+        comment.remove();
+      }
+    }
+  };
+</script>
+{% endblock %}
